@@ -43,9 +43,7 @@ Route::get('insert','StudInsertController@insertform');
 Route::post('create','StudInsertController@insert');
 Route::get('students','StudInsertController@fetchUsers');
 
-Route::get('/form',function(){
-  return view('form');
-});
+
 
 Route::get('/validation','ValidationControlle@showform');
 Route::post('/validation','ValidationControlle@validateform');
