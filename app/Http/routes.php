@@ -54,7 +54,7 @@ Route::get('/uploadfile','UploadFileController@index');
 Route::post('/uploadfile','UploadFileController@showUploadFile');
 
 Route::get('/error',function(){
-   abort(404);
+   return view('404');
 });
 
 Route::auth();
