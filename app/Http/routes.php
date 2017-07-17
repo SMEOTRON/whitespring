@@ -41,8 +41,9 @@ Route::get('blade', function () {
 
 Route::get('insert','StudInsertController@insertform');
 Route::post('create','StudInsertController@insert');
-Route::get('students','StudInsertController@fetchUsers');
 
+Route::get('students','StudInsertController@fetchUsers');
+Route::get('/students/{id}','studentController@fetchStudent');
 
 
 Route::get('/validation','ValidationControlle@showform');
