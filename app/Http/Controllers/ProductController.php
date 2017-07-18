@@ -29,17 +29,19 @@ class ProductController extends Controller
       $product_name=$request->input('product_name');
       $product_price=(int)$request->input('product_price');
       $product_color=$request->input('product_color');
-      if(!isset($request->file('image'))){
+      if(null=== $request->file('image')){
         echo "no image";
       }
-      $product_image=$request->file('image');
+                else{
+                $product_image=$request->file('image');
 
-      $destinationPath = 'uploads';
-      $filename=rand()."_".$product_name;
-      $product_image->move($destinationPath,$filename);
-      DB::insert("insert into products(product_name,product_price,product_colors,product_image) values(?,?,?,?)",[$product_name,$product_price,$product_color,$destinationPath."/".$filename]);
-      return '[{"status":"success","comment":"product added successfully"}]';
-    }
+                $destinationPath = 'uploads';
+                $filename=rand()."_".$product_name;
+                $product_image->move($destinationPath,$filename);
+                DB::insert("insert into products(product_name,product_price,product_colors,product_image) values(?,?,?,?)",[$product_name,$product_price,$product_color,$destinationPath."/".$filename]);
+                return '[{"status":"success","comment":"product added successfully"}]';
+              }
+  }
 
     public function products(){
 
