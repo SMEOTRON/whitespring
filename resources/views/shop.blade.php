@@ -8,6 +8,7 @@
        {{ $pro->id }}
        {{ $pro->product_name}}
        {{$pro->product_colors}}
+       <img src= "{{$pro->product_image}}" />
 </div>
    @endforeach
 @endif

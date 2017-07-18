@@ -71,3 +71,4 @@ Route::get('/login',function(){
  Route::get('/delete/product/{id}','ProductController@deleteProduct');
 
  Route::get('/shop','ProductController@shop');
+ 
