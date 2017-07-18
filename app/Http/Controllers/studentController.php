@@ -13,7 +13,7 @@ class studentController extends Controller
 
       $student = DB::select('select * from student where id =?',[$id]);
       if(json_encode($student)=="[]"){
-        echo '[{"error":"true"}]';
+        echo '[{"error":"true","comment":"no matching student"}]';
       }
       else{
       return json_encode($student);

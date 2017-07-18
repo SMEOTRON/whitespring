@@ -14,10 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/product/{id}',function($id){
 
-    return "Hello ".$id;
-});
 Route::get('/controller',[
   "uses"=>'UserController@index'
 ]);
@@ -63,3 +60,12 @@ Route::get('/home', 'HomeController@index');
 Route::get('/login',function(){
   return view('login');
 });
+
+//product creation and retrivel routes/
+ Route::get('/products','ProductController@products');
+ Route::get('/products/{id}','ProductController@singleProduct');
+
+ Route::get('/product/new','ProductController@createProductForm');
+ Route::post('/create/product','ProductController@createProduct');
+
+ Route::get('/delete/product/{id}','ProductController@deleteProduct');
