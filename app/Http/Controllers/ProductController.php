@@ -29,7 +29,9 @@ class ProductController extends Controller
       $product_name=$request->input('product_name');
       $product_price=(int)$request->input('product_price');
       $product_color=$request->input('product_color');
-
+      if(!isset($request->file('image'))){
+        echo "no image";
+      }
       $product_image=$request->file('image');
 
       $destinationPath = 'uploads';
@@ -49,7 +51,7 @@ class ProductController extends Controller
     public function shop(){
       $products=DB::select("Select * from products");
       return view('shop')->with(compact('products'));
-      
+
 
 
 
