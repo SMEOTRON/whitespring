@@ -66,6 +66,8 @@ Route::get('/login',function(){
  Route::get('/products/{id}','ProductController@singleProduct');
 
  Route::get('/product/new','ProductController@createProductForm');
- Route::post('/create/product','ProductController@createProduct');
+ Route::post('/product/new','ProductController@createProduct');
 
  Route::get('/delete/product/{id}','ProductController@deleteProduct');
+
+ Route::get('/shop','ProductController@shop');
